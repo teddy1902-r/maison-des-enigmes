@@ -1,0 +1,12 @@
+MAISON DES ÉNIGMES — IMAGES
+
+Toutes les images sont volontairement dans le même dossier que index.html, script.js et style.css.
+
+Pour remplacer une photo sans modifier le jeu :
+1. Remplace le fichier JPG correspondant.
+2. Garde exactement le même nom de fichier.
+3. Ne modifie pas index.html, script.js ou style.css.
+
+Images :
+hall.jpg, office.jpg, cellar.jpg
+alexandre.jpg, antoine.jpg, claire.jpg, elise.jpg, julie.jpg, julien.jpg, lucas.jpg, marc.jpg, sophie.jpg, thomas.jpg

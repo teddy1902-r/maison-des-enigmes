@@ -1,0 +1,95 @@
+@import url("mini-layout-core.css");
+
+/* Résultats des mini-jeux : garder la défaite clairement visible avec le plateau final. */
+.mini-msg.mini-defeat,
+.mini-msg.mini-draw{
+  margin-top:12px;
+  padding:10px 12px;
+  border:1px solid #625b4c;
+  background:rgba(12,11,9,.92);
+  color:#ddd4bd;
+  line-height:1.55;
+}
+
+.mini-msg.mini-defeat strong,
+.mini-msg.mini-draw strong{
+  display:inline-block;
+  margin-right:6px;
+  letter-spacing:.08em;
+}
+
+/* Le dernier coup reste bien repérable après une défaite au Puissance 4. */
+.modal-card.mini-connect4 .c4-cell.last-move{
+  position:relative;
+  z-index:2;
+}
+
+/* Les jetons qui composent l'alignement gagnant restent clairement visibles après la défaite. */
+.modal-card.mini-connect4 .c4-cell.winning-cell{
+  position:relative;
+  z-index:3;
+  outline:3px solid rgba(255,255,255,.92);
+  outline-offset:-4px;
+  box-shadow:0 0 0 2px rgba(0,0,0,.75),0 0 18px rgba(255,255,255,.28);
+}
+
+.modal-card.mini-connect4 .c4-cell.winning-cell .c4-disc{
+  transform:scale(1.06);
+}
+
+.modal-card.mini-connect4 .mini-defeat{
+  font-weight:600;
+}
+
+/* Cave : même repère image/hotspots en portrait, paysage et bureau. */
+.room-art.art-cellar{
+  background-size:100% 100%;
+  background-position:0 0;
+  background-repeat:no-repeat;
+}
+
+.art-cellar,
+.art-cellar + .hotspots{
+  transform:none;
+}
+
+/* Qui est-ce ? : navigation placée au niveau de la question. */
+.modal-card.mini-who .who-question-row{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:12px;
+  align-items:stretch;
+  margin-bottom:14px;
+}
+
+.modal-card.mini-who .who-question-row .who-question{
+  margin:0;
+}
+
+.modal-card.mini-who .who-question-action{
+  display:flex;
+  align-items:center;
+}
+
+.modal-card.mini-who .who-question-next{
+  min-height:100%;
+  white-space:nowrap;
+  padding-left:16px;
+  padding-right:16px;
+}
+
+@media(max-width:560px){
+  .modal-card.mini-who .who-question-row{
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+
+  .modal-card.mini-who .who-question-action{
+    justify-content:stretch;
+  }
+
+  .modal-card.mini-who .who-question-next{
+    width:100%;
+    min-height:44px;
+  }
+}
