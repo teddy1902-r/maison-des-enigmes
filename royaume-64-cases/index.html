@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101426">
+  <title>Le Royaume des 64 Cases</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div class="hero-badge">♟ Aventure interactive</div>
+      <h1>Le Royaume des 64 Cases</h1>
+      <p>Traverse les neuf épreuves du royaume. Le mot mystère ne sera révélé qu'après le dernier défi.</p>
+      <div class="progress-wrap" aria-label="Progression">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+      <div id="progressText" class="progress-text">Chapitre 1 sur 9</div>
+    </header>
+
+    <section id="introCard" class="intro-card">
+      <div class="comic-scene attic-scene">
+        <div class="panel-label">Prologue</div>
+        <div class="scene-icon">♞</div>
+        <div class="speech speech-left">« Cet échiquier n'était pas là hier… »</div>
+        <div class="speech speech-right">Une lumière jaillit soudain des 64 cases.</div>
+      </div>
+      <div class="intro-copy">
+        <h2>Entre dans le royaume</h2>
+        <p>Un vieil échiquier t'aspire dans un monde où chaque porte s'ouvre grâce à un coup juste. Observe, réfléchis et anticipe.</p>
+        <button id="startBtn" class="primary-btn">Commencer l'aventure</button>
+        <p id="serverStatus" class="server-status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section id="gameCard" class="game-card hidden" aria-live="polite">
+      <div class="chapter-head">
+        <span id="chapterNumber" class="chapter-kicker">Chapitre 1</span>
+        <h2 id="chapterTitle"></h2>
+      </div>
+
+      <div class="comic-grid">
+        <article class="comic-panel story-panel">
+          <div id="sceneIcon" class="big-scene-icon">♜</div>
+          <p id="storyText" class="narration"></p>
+          <div id="dialogueText" class="speech speech-bottom"></div>
+        </article>
+
+        <article class="comic-panel puzzle-panel">
+          <div class="puzzle-title-row">
+            <div>
+              <div class="mini-label">Mini-jeu</div>
+              <h3 id="puzzleTitle"></h3>
+            </div>
+            <div id="stepBadge" class="step-badge"></div>
+          </div>
+          <p id="taskText" class="task-text"></p>
+
+          <div class="board-wrap">
+            <div id="chessboard" class="chessboard" role="grid" aria-label="Échiquier interactif"></div>
+          </div>
+
+          <p id="moveHint" class="move-hint">Clique une pièce, puis sa case d'arrivée.</p>
+          <div id="feedback" class="feedback" aria-live="assertive"></div>
+
+          <div class="actions">
+            <button id="resetMoveBtn" class="secondary-btn">Annuler la sélection</button>
+            <button id="nextBtn" class="primary-btn hidden">Continuer</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="endingCard" class="ending-card hidden">
+      <div class="ending-glow">♛</div>
+      <div class="panel-label">Épilogue</div>
+      <h2>Le royaume est libéré</h2>
+      <p>La dernière pièce tombe. Une inscription lumineuse apparaît au-dessus de l'échiquier.</p>
+      <div class="mystery-box">
+        <span>Mot mystère</span>
+        <strong id="mysteryWord">•••••••••</strong>
+      </div>
+      <p class="ending-quote">« La force seule ne suffit pas. Il faut voir plusieurs coups plus loin. »</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
